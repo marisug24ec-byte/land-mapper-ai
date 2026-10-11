@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 25% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 222 22% 12%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 22% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 172 66% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 25% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 217 91% 60%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  background: hsl(222 25% 8%) !important;
+  font-family: inherit !important;
+}
+
+.leaflet-control-attribution {
+  background: hsl(222 22% 12% / 0.8) !important;
+  color: hsl(215 15% 55%) !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-control-attribution a {
+  color: hsl(217 91% 60%) !important;
+}
+
+.leaflet-control-zoom {
+  display: none !important;
+}
+
+/* Vertex markers for edit mode */
+.vertex-marker {
+  background: hsl(217 91% 60%);
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: move;
+  box-shadow: 0 0 6px hsl(217 91% 60% / 0.5);
+}
+
+/* Glass panel utility */
+.glass-panel {
+  background: hsl(222 22% 12% / 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid hsl(220 15% 22% / 0.5);
+  box-shadow: 0 8px 32px hsl(0 0% 0% / 0.4);
+}
+
+/* Segmentation markers */
+.seg-include {
+  background: hsl(142 71% 45%);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px hsl(142 71% 45% / 0.6);
+}
+
+.seg-exclude {
+  background: hsl(0 72% 51%);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px hsl(0 72% 51% / 0.6);
+}
